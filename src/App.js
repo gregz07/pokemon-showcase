@@ -61,7 +61,7 @@ const Main = (props) => {
         </Row>
         <Row bottom="xs" >
           <Col xs={3} style={{padding: '2em'}}>
-            <button onClick={() => setOffset(offset - pageSize)}> Prev </button>
+            <button onClick={() => setOffset(offset - pageSize < 0 ? 0 : offset - pageSize)}> Prev </button>
             <button onClick={() => setOffset(offset + pageSize)}> Next </button>
           </Col>
           <Col xs={6}></Col> 
