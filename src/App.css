@@ -17,7 +17,8 @@
 }
 
 .pagesize-selected {
-  background-color: teal;
+  color: #ffcb05;
+  background-color: #2b73b9;
 }
 
 .grass {
@@ -32,7 +33,15 @@
   background-color: purple;
 }
 
+.psychic {
+  background-color: darkorchid;
+}
+
 .water {
+  background-color: cornflowerblue;
+}
+
+.ice {
   background-color: cyan;
 }
 
@@ -58,6 +67,18 @@
 
 .electric {
   background-color: #c1c108;
+}
+
+.fairy {
+  background-color: violet;
+}
+
+.fighting {
+  background-color: tomato;
+}
+
+.dragon {
+  background-color: #A27DFA;
 }
 
 .stat_hp {
