@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import './App.css';
 import PokemonList from './components/pokemon-list';
 import PokemonDetail from './components/pokemon-detail'
 import loading from './components/loading';
 import { getPokemons } from './services/poke-service'
 
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, useHistory } from 'react-router-dom';
+
 import { ButtonToolbar, ButtonGroup, Button } from 'react-bootstrap'
 import { Row, Col } from 'react-flexbox-grid';
 
@@ -19,17 +20,25 @@ function App() {
 }
 
 const Main = (props) => {
-  const PokemonListLoading = loading(PokemonList);
-
+  const history = useHistory();
+  const [offset, setOffset] = useState(0);
+  const [pageSize, setPageSize] = useState(20);
   const [appState, setAppState] = useState({
     loading: false,
     pokemons: null
-  }); 
-  const [offset, setOffset] = useState(0);
-  const [pageSize, setPageSize] = useState(20);
-  
+  });
+
+  const PokemonListLoading = loading(PokemonList);
+
   useEffect(() => {
       setAppState({ loading: true });
+      
+      // Set previous state
+      if (history.action === 'REPLACE' && history.location.state) {
+        setOffset(history.location.state.offset)
+        setPageSize(history.location.state.pageSize)
+      }
+
       getPokemons(offset, pageSize)
         .then((result) => {
           const allPokemons = result.data; 
@@ -48,7 +57,7 @@ const Main = (props) => {
           </Col>
         </Row>
         <Row>
-          <PokemonListLoading isLoading={appState.loading} pokemons={appState.pokemons} />
+          <PokemonListLoading isLoading={appState.loading} pokemons={appState.pokemons} pageSize={pageSize} offset={offset} />
         </Row>
         <Row bottom="xs" >
           <Col xs={3} style={{padding: '2em'}}>

@@ -4,7 +4,8 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 import { Link } from 'react-router-dom';
 
 const PokemonList = (props) => {
-  const { pokemons } = props; 
+  const { pokemons, pageSize, offset } = props; 
+  console.log(pageSize)
   if (!pokemons || pokemons.length === 0) {
     return <p> 0 pokemons found .. </p>;
   }
@@ -15,14 +16,16 @@ const PokemonList = (props) => {
           {
             pokemons.map(pokemon => {
               return (
-                <Col xs={6} md={3}>
+                <Col xs={6} md={3} key={pokemon.name}>
                   <Card style={{ 'text-align': 'center' }}>
                     <Card.Img variant="top" src={pokemon.sprites.front_default} />
                     <Card.Body>
                       <Card.Title> <Link to={{
                         pathname: `/pokemon/${pokemon.id}`,
                         state: {
-                          detail: pokemon
+                          detail: pokemon,
+                          pageSize: pageSize,
+                          offset: offset
                         }
                       }}> {pokemon.name} </Link></Card.Title>
                     </Card.Body>
