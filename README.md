@@ -1,5 +1,8 @@
 Stateless Web Application to try out React.js, using the REST API https://pokeapi.co/
 
+![Pokemons](../public/pokemons.png)
+![Pokemon detail](../public/pokemon_detail.png)
+
 ## Available Scripts
 
 In the project directory, you can run:
