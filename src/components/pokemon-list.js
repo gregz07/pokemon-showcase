@@ -10,13 +10,13 @@ const PokemonList = (props) => {
   }
   
   return (
-      <Grid fluid >
-        <Row  middle="md" center="md" style={{ height: '100vh' }}> 
+      <Grid >
+        <Row  middle="md" center="md"> 
           {
             pokemons.map(pokemon => {
               return (
                 <Col xs={6} md={3}>
-                  <Card style={{ width: '18rem' }}>
+                  <Card style={{ 'text-align': 'center' }}>
                     <Card.Img variant="top" src={pokemon.sprites.front_default} />
                     <Card.Body>
                       <Card.Title> <Link to={{
