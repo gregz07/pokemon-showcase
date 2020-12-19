@@ -1,4 +1,4 @@
-Stateless Web Application to test React.js, using the REST API https://pokeapi.co/
+Stateless Web Application to try out React.js, using the REST API https://pokeapi.co/
 
 ## Available Scripts
 
