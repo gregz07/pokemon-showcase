@@ -11,9 +11,7 @@ function getPokemons(offset, pageSize) {
           .all(promises)
           .then(responses => {
             let result = { 
-              data: responses.map(r => r.data), 
-              next: response.data.next, 
-              previous: response.data.previous 
+              data: responses.map(r => r.data)
             };
             resolve(result);
           })
