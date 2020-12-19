@@ -1,7 +1,7 @@
 Stateless Web Application to try out React.js, using the REST API https://pokeapi.co/
 
-![Pokemons](https://github.com/gregz07/pokemon-showcase/blob/main/public/pokemons.png)
-![Pokemon detail](https://github.com/gregz07/pokemon-showcase/blob/main/public/pokemon_detail.png)
+![Pokemons](https://github.com/gregz07/pokemon-showcase/blob/main/public/pokemons.PNG)
+![Pokemon detail](https://github.com/gregz07/pokemon-showcase/blob/main/public/pokemon_detail.PNG)
 
 ## Available Scripts
 
