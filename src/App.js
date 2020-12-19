@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import PokemonList from './components/pokemon-list';
 import PokemonDetail from './components/pokemon-detail'

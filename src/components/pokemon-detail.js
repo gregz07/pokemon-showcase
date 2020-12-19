@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'; 
+import React from 'react'; 
 import { Row, Col, Grid } from 'react-flexbox-grid';
 import { useHistory } from "react-router-dom";
 

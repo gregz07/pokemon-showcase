@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 
 const PokemonList = (props) => {
   const { pokemons, pageSize, offset } = props; 
-  console.log(pageSize)
   if (!pokemons || pokemons.length === 0) {
     return <p> 0 pokemons found .. </p>;
   }
